@@ -26,23 +26,16 @@
       <div class="col-md-9" id="gifPlace"><h1>Gif-Tastic!</h1></div>
     </div>
 
-    <div class="col-md-3">
-      <form>
-        <div class="form-group">
-          <label for="search"></label>
-          <input
-            type="search"
-            class="form-control"
-            id="searchBar"
-            aria-describedby="searchHelp"
-          />
-          <small id="searchAnything" class="form-text text-muted"
-            >Search Anything!</small
-          >
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
+			<div class="col-xs-3 col-sm-3 col-md-3col-lg-3">
+				<form id="form" onsubmit="return false">
+				  <fieldset>
+				  	<label for="input-label">Add Giphy</label><br>
+				    <input type="text" placeholder="Type something…" id="input">
+				    <button type="button" id="btnSubmit" data="submitBtn">Submit</button>
+				  </fieldset>
+				</form>
+			</div>
+		</div>	
     <div class="row">
       <div class="col-md-12 gify-container"></div>
     </div>

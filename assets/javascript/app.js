@@ -1,4 +1,10 @@
-var gifs = ["Rick and Morty", "Futurama", "Family Guy", "American Dad"];
+var gifs = [
+  "Rick and Morty",
+  "Futurama",
+  "Family Guy",
+  "Chowder",
+  "The Simpsons"
+];
 
 var button;
 var searchTopic = "";
@@ -16,11 +22,11 @@ buttonMaker();
 
 $(document).on("click", ".top-button", function() {
   var thing = $(this).attr("data");
-  console.log("thing: " + thing);
+  // console.log("thing: " + thing);
   var queryURL =
     "https://api.giphy.com/v1/gifs/search?q=" +
     thing +
-    "&api_key=C01R2xURFqCz6oEkz89pIqaDGFPgxD4N&limit=10";
+    "&api_key=C01R2xURFqCz6oEkz89pIqaDGFPgxD4N&limit=5";
 
   $.ajax({
     url: queryURL,
@@ -62,3 +68,25 @@ $(document).on("click", ".giphy-img", function() {
     $(this).attr("state", "still");
   }
 });
+
+$("#btnSubmit").click(function(event) {
+  event.preventDefault();
+  console.log("input");
+  newTopic = $("#input").val();
+  gifs.push(newTopic);
+  console.log(gifs);
+  $("#input").val("");
+  buttonMaker();
+});
+
+buttonMaker();
+
+// $("#input").keyup(function(event) {
+//   event.preventDefault();
+//   console.log("input");
+//   newTopic = $("#input").val();
+//   gifs.push(newTopic);
+//   console.log(gifs);
+//   buttonMaker();
+// });
+// buttonMaker();
